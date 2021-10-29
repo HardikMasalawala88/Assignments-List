@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS-WPF-AWS-S3-IAM", "AS-WPF-AWS-S3-IAM\AS-WPF-AWS-S3-IAM.csproj", "{FFAD2C7D-585C-460B-B71A-593BD633892F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab2", "lab2\lab2.csproj", "{7F12B915-719B-441B-A15E-209B2D9225C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab2", "lab2\lab2.csproj", "{7F12B915-719B-441B-A15E-209B2D9225C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab3", "lab3\lab3.csproj", "{E286EA4B-97E4-4D1B-BC83-F0FC810738C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7F12B915-719B-441B-A15E-209B2D9225C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F12B915-719B-441B-A15E-209B2D9225C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F12B915-719B-441B-A15E-209B2D9225C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E286EA4B-97E4-4D1B-BC83-F0FC810738C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E286EA4B-97E4-4D1B-BC83-F0FC810738C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E286EA4B-97E4-4D1B-BC83-F0FC810738C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E286EA4B-97E4-4D1B-BC83-F0FC810738C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

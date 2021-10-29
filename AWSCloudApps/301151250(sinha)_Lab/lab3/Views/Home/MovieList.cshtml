@@ -1,0 +1,91 @@
+﻿@model lab3.Models.DataModels.MovieMetaData
+@{
+
+}
+<div class="row">
+    <div class="card-header">
+        <button type="button" class="btn btn-outline-primary" id="btnAddMovie" data-toggle="modal" onclick="frmmovie.reset();" data-target="#modal-NewMovie">Add New Movie</button>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Darbar</h5>
+                <p class="card-text">Release Date: 25th September,2018 </p>
+                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">YJHD</h5>
+                <p class="card-text">Release Date: 22nd January, 2016 </p>
+                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">URI</h5>
+                <p class="card-text">Release Date: 15th August, 2019</p>
+                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal-NewMovie" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <h4 class="modal-title">Add New Movie</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>&nbsp;
+                </button>
+            </div>
+            <form method="post" asp-action="AddMovie" asp-controller="Home" name="frmmovie" id="frmaddMovie">
+                <div class="modal-body">
+                    @*<input type="hidden" asp-for="MovieMetaId" value="@{Model != null ? Model.MovieMetaId : 0}" />
+                        <input type="hidden" asp-for="MovieId" value="@{Model != null ? Model.MovieId : 0}" />*@
+
+                    <div class="row justify-content-between">
+                        <div class="col form-group">
+                            <label asp-for="Movie.MovieVideo"></label>
+                            <input asp-for="Movie.MovieVideo" type="file" class="form-control" required />
+                            <span asp-validation-for="Movie.MovieVideo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col form-group">
+                            <label asp-for="MovieTitle"></label>
+                            <textarea asp-for="MovieTitle" class="form-control" required></textarea>
+                            <span asp-validation-for="MovieTitle" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col form-group">
+                            <label asp-for="ReleaseDate"></label>
+                            <input asp-for="ReleaseDate" class="form-control" required />
+                            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                        </div>
+                        <div class="col form-group">
+                            <label asp-for="ActorType"></label>
+                            <input asp-for="ActorType" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
