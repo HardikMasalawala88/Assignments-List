@@ -1,0 +1,23 @@
+﻿<Window x:Class="AS_WPF_AWS_S3_IAM.Component.UploadToS3Bucket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AS_WPF_AWS_S3_IAM.Component"
+        mc:Ignorable="d"
+        Title="UploadToS3Bucket" Height="480" Width="800" Loaded="Window_Loaded" Unloaded="Window_Unloaded">
+    <Grid>
+        <Label Content="BUCKET NAME" HorizontalAlignment="Left" Margin="15,46,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBucketList" HorizontalAlignment="Left" Margin="131,48,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="comboBucketList_SelectionChanged"/>
+        <Button x:Name="btnBackToMainWindow" Content="BACK TO MAIN WINDOW" HorizontalAlignment="Left" Margin="507,249,0,0" VerticalAlignment="Top" Height="41" Width="162" Click="btnBackToMainWindow_Click"/>
+        <Button x:Name="btnUpload" Content="UPLOAD" HorizontalAlignment="Left" Margin="507,173,0,0" VerticalAlignment="Top" Height="41" Width="162" Click="btnUpload_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="20,96,0,0" TextWrapping="Wrap"   
+                 Text="SELECT FILE BY CLICKING BROWSE FILE" IsReadOnly="True" VerticalAlignment="Top" Width="436" Name="FileNameTextBox"/>
+        <Button x:Name="BrowseButton" Content="Browse a file" HorizontalAlignment="Left"   
+                Margin="507,93,0,0" VerticalAlignment="Top" Width="162" Click="BrowseButton_Click"   
+                RenderTransformOrigin="1.047,0.821" Height="40"/>
+        <DataGrid x:Name="datagridBucketFiles" Margin="20,173,344,79"/>
+
+        <TextBlock Text="Aashi Sinha @Centennial College" Height="22" VerticalAlignment="Top" Margin="10,393,-10,0"/>
+    </Grid>
+</Window>

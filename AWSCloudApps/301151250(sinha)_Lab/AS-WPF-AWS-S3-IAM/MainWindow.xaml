@@ -1,0 +1,17 @@
+﻿<Window x:Class="AS_WPF_AWS_S3_IAM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AS_WPF_AWS_S3_IAM"
+        mc:Ignorable="d"
+        Title="Lab#1" Height="240" Width="800">
+    <Grid>
+        <Button x:Name="btnCreateBucket" Content="CREATE BUCKET" HorizontalAlignment="Left" Margin="118,40,0,0" VerticalAlignment="Top" Height="63" Width="135" Click="btnCreateBucket_Click"/>
+        <Button x:Name="btnObjectLevelOperations" Content="OBJECT LEVEL OPERATIONS" HorizontalAlignment="Left" Margin="283,40,0,0" VerticalAlignment="Top" Height="63" Width="263" Click="btnObjectLevelOperations_Click"/>
+        <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Margin="579,40,0,0" VerticalAlignment="Top" Height="63" Width="122" Click="btnExit_Click" />
+        <Border Background="LightGray" Margin="0,167,0,0">
+            <TextBlock Text="Aashi Sinha @Centennial College" Margin="0,10,0,0"/>
+        </Border>
+    </Grid>
+</Window>
