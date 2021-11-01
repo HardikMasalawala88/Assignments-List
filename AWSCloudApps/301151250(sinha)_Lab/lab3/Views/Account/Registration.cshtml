@@ -1,5 +1,8 @@
 ﻿@model lab3.Models.DataModels.UserRegistration
-
+@{
+    ViewBag.Title = "User Signup";
+    ViewBag.showHeader = false;
+}
 @section Styles{
     <style>
         .form-signin {
@@ -24,10 +27,6 @@
 
         <div class="form-label-group mb-3">
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @required = "required", @placeholder = "Enter Name", @autofocus = "true" })
-        </div>
-
-        <div class="form-label-group mb-3">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @required = "required", @placeholder = "Email address", @autofocus = "true" })
         </div>
 
         <div class="form-label-group mb-3">
