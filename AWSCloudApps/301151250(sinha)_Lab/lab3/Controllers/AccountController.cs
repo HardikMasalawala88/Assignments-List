@@ -38,26 +38,15 @@ namespace lab3.Controllers
         [HttpPost]
         public IActionResult Login(UserCredential user)
         {
-            if (user.Username == null && user.Password != null)
+            var users = UserCredentialsStores.getUserList();
+            foreach(var userItem in users)
             {
-                TempData["errorMsg"] = "UserName Or Password Is Not Matched..!";
-                return View();
-            }
-            else
-            {
-                //var loggedInUser = _context.Users.Where(x => x.UserName == user.Username && x.Password == user.Password)
-                //                                 .FirstOrDefault();
-                if (user.Username != null)
+                if(userItem.Username == user.Username && userItem.Password == user.Password)
                 {
-                    HttpContext.Session.SetString("UserName", user.Username);
+                    return RedirectToAction("AddMovie", "Home");
                 }
-                else
-                {
-                    TempData["errorMsg"] = "UserName Or Password Is Not Matched..!";
-                    return View();
-                }
-                return RedirectToAction("Index", "Home");
             }
+            return View();
         }
 
         public IActionResult Logout()

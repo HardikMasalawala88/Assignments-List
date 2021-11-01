@@ -1,12 +1,8 @@
-﻿using lab3.Models;
-using lab3.Models.DataModels;
+﻿using lab3.Models.DataModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace lab3.Controllers
 {
@@ -25,15 +21,31 @@ namespace lab3.Controllers
         }
 
         [HttpGet]
-        public IActionResult MovieList()
+        public IActionResult AddMovie()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult MovieList(MovieMetaData movieData)
+        public IActionResult AddMovie(Movie movieData)
         {
-            return View(movieData);
+            //var localpath = "D:\\Projects\\MDT_Projects";
+            //var localpath1 = movieData.MovieVideo.ToString();
+            var fileName = string.Empty;//movieData.MovieVideo.Split("\\").Last();
+
+            var data = S3Service.sendMyFileToS3("", "ec2studio_sample_bucket", "", movieData.MovieVideo.FileName);
+
+            return View(data);
+            //if (data)
+            //{
+            //    MessageBox.Show("File uploaded successfully on S3 Bucket Name: " + comboBucketList.SelectedValue.ToString());
+            //}
+            //if (fetchBucketFiles)//NOT GETTING RESPONSE FROM S3 AND APPLICATION GETTING STUCK IF IT IS TRUE THEN IT GOES INSIDE IF AND FETCH BUCKET FILES
+            //{
+            //    fetchBucketData(comboBucketList.SelectedValue.ToString());
+            //}
+
+
         }
     }
 }

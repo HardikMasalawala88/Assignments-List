@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,7 +14,7 @@ namespace lab3.Models.DataModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MovieId { get; set; }
 
-        public string MovieVideo { get; set; }
+        public IFormFile MovieVideo { get; set; }
 
     }
 }
