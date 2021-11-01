@@ -1,4 +1,5 @@
-﻿using lab3.Models.DataModels;
+﻿using lab3.Models;
+using lab3.Models.DataModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,17 +14,16 @@ namespace lab3.Controllers
         [HttpGet]
         public IActionResult Registration()
         {
-            UserRegistration user = new UserRegistration();
+            UserCredential user = new UserCredential();
             return View(user);
         }
 
         [HttpPost]
-        public IActionResult Registration(UserRegistration userRegistration)
+        public IActionResult Registration(UserCredential userRegistration)
         {
             if (ModelState.IsValid)
             {
-               // userRegistration.CreatedDate = DateTime.Now;
-               // _userService.InsertUser(userRegistration);
+                UserCredentialsStores.addUser(userRegistration);
             }
             return RedirectToAction("Login");
         }
@@ -31,12 +31,12 @@ namespace lab3.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            UserLogin userLogin = new UserLogin();
+            UserCredential userLogin = new UserCredential();
             return View(userLogin);
         }
 
         [HttpPost]
-        public IActionResult Login(UserLogin user)
+        public IActionResult Login(UserCredential user)
         {
             if (user.Username == null && user.Password != null)
             {
