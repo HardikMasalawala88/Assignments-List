@@ -1,6 +1,6 @@
 ﻿@model lab3.Models.DataModels.MovieMetaData
 @{
-
+    bool isAuthor = true;
 }
 <div class="row">
     <div class="card-header">
@@ -14,7 +14,12 @@
             <div class="card-body">
                 <h5 class="card-title">Darbar</h5>
                 <p class="card-text">Release Date: 25th September,2018 </p>
-                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+                <a href="#" class="btn btn-primary">Download</a>
+                @if (isAuthor == true)
+                {
+                    <a href="#" class="btn btn-primary">Modify</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                }
             </div>
         </div>
     </div>
@@ -23,7 +28,12 @@
             <div class="card-body">
                 <h5 class="card-title">YJHD</h5>
                 <p class="card-text">Release Date: 22nd January, 2016 </p>
-                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+                <a href="#" class="btn btn-primary">Download</a>
+                @if (isAuthor == true)
+                {
+                    <a href="#" class="btn btn-primary">Modify</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                }
             </div>
         </div>
     </div>
@@ -32,7 +42,11 @@
             <div class="card-body">
                 <h5 class="card-title">URI</h5>
                 <p class="card-text">Release Date: 15th August, 2019</p>
-                <a href="#" class="btn btn-primary">Download</a>&nbsp;<a href="#" class="btn btn-primary">Modify</a>
+                <a href="#" class="btn btn-primary">Download</a>
+                @if (isAuthor == true) { 
+                    <a href="#" class="btn btn-primary">Modify</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                }
             </div>
         </div>
     </div>
